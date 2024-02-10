@@ -18,6 +18,7 @@ class tgsendmessage:
 
 
 class tgsubscribe:
+    #id - номер члена списка, chatid - номер чата, подписанного на этого пользователя
     def __init__(subscribe, id, chatid):
         if subscribe: 
             if id[chatid] not in groups.subscribed[id]: groups.subscribed[id].append(chatid)            
