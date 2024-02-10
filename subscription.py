@@ -1,18 +1,19 @@
 import random
 import groups
+import tg
 #import json
 
 from paho.mqtt import client as mqtt_client
 
-#mqtt://projectbus:GRAEOWIbcwidiX9E@
-broker = 'projectbus.cloud.shiftr.io'
+
+broker = 'inkmustang619.cloud.shiftr.io'
 port = 1883
 topicpython = "python/mqtt"
 topicesm = "emqx/esp32"
 
 client_id = f'subscribe-{random.randint(0, 100)}'
-username = 'projectbus'
-password = 'GRAEOWIbcwidiX9E'
+username = 'inkmustang619'
+password = 'dnwHh6EOeyRPmJlm'
 
 
 def connect_mqtt() -> mqtt_client:
@@ -29,26 +30,24 @@ def connect_mqtt() -> mqtt_client:
     return client
 
 
-#def sendmessage(msg)
-
 def subscribe(client: mqtt_client):
-    
+
     def on_message(client, userdata, msg):
         isValid = False
         for i in groups.data:
             for j in i["rfidId"]:
-                if j == msg: isValid = True
+                if j == msg: 
+                    isValid = True
+                    tg.tgsendmessage(groups.data.index[i])
             for j in i["fingerId"]:
-                if j == msg: isValid = True
+                if j == msg: 
+                    isValid = True
+                    tg.tgsendmessage(groups.data.index[i])
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic validation is ", isValid)
-        sendtgmsg(False)
+        
     client.subscribe(topicpython)
     client.subscribe(topicesm)
     client.on_message = on_message
-
-
-def sendtgmsg(msg):
-    return
 
 
 def run():

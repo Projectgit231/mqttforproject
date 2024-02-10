@@ -33,7 +33,10 @@ data = [
     }
 ]
 
-for i in data:
-    print(i["firstName"])
-    for j in i["rfidId"]:
-        if j == 0: print(j)
+
+subscribed = [
+    [],
+    [],
+    [],
+    []
+]

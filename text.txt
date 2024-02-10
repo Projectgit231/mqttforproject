@@ -1,3 +1,5 @@
+Сборник mqtt адрессов, логинов и паролей
+
 mqtt://                   
 inkmustang619                         
 dnwHh6EOeyRPmJlm                                             
