@@ -1,0 +1,15 @@
+mqtt://                   
+inkmustang619                         
+dnwHh6EOeyRPmJlm                                             
+inkmustang619.cloud.shiftr.io
+
+
+
+readonly token 
+
+mqtt://                 
+inkmustang619                       
+nVd5dpHQMcTf7uGx                   
+inkmustang619.cloud.shiftr.io
+
+(read only)
